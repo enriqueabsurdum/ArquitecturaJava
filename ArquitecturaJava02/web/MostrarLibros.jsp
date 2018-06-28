@@ -18,11 +18,10 @@
             ResultSet resultado = null;
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                /* 1. Crera un objeto conexión y un objeto sentencia */
+                /* 1. Crea un objeto conexión y un objeto sentencia */
                 conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/arquitecturajava", "root", "root");
                 sentencia = conexion.createStatement();
-                /* 2. Crea una consulta SQL de selección para todos los libros 
-                      de la tabla */
+                /* 2. Crea una consulta SQL de selección para todos los libros de la tabla */
                 String consultaSQL = "SELECT isbn, titulo, categoria FROM Libros";
                 /* 3. Ejecuta la sentencia con su SQL */
                 /* 4. Devuelve un ResultSet con todos los registros */
@@ -37,7 +36,7 @@
             } catch (SQLException sqle) {
                 System.out.printf("Error al acceder a la base de datos : %s\n", sqle.getMessage());
             } finally {
-                /* 6. Cierra los recuros (conexión, sentencia, resultado) */
+                /* 6. Cierra los recursos (conexión, sentencia, resultado) */
                 if (resultado != null) {
                     resultado.close();
                 }

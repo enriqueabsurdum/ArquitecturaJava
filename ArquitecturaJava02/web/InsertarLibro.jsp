@@ -5,8 +5,7 @@
 <%@page import="java.sql.SQLException" %>
 
 <%
-    /* 1. Lee la información que proviene de FormularioInsertarLibro.html usando
-          el objeto request de JSP */
+    /* 1. Lee la información que proviene de FormularioInsertarLibro.jsp usando el objeto request de JSP */
     String isbn = request.getParameter("isbn");
     String titulo = request.getParameter("titulo");
     String categoria = request.getParameter("categoria");
@@ -15,8 +14,7 @@
     int filas = 0;
     try {
         Class.forName("com.mysql.jdbc.Driver");
-        /* 2. Crea un objeto de tipo Connection (conexión) y un objeto de tipo,
-              Statement (sentencia) */
+        /* 2. Crea un objeto de tipo Connection (conexión) y un objeto de tipo, Statement (sentencia) */
         conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/arquitecturajava", "root", "root");
         sentencia = conexion.createStatement();
         /* 3. Crea una consulta SQL de insercción con los datos del libro*/
